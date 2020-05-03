@@ -1,8 +1,9 @@
 {
-  "name": "Vue_Rails",
+  "name": "vue_rails",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",
+    "axios": "^0.19.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11"
