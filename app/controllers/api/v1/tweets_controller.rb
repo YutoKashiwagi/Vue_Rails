@@ -1,6 +1,6 @@
 class Api::V1::TweetsController < ApiController
   def index
-    tweets = Tweet.all
+    tweets = Tweet.select(:id, :content)
     render json: tweets
   end
   
