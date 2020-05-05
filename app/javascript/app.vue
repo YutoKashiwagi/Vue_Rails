@@ -19,6 +19,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'TweetIndex',
       component: TweetsIndexVue
     },
     {
