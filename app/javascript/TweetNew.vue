@@ -1,17 +1,16 @@
 <template>
-  <form @submit.prevent="createTweet">
-    <div>
-      <label>Content</label>
-      <input v-model="tweet.content" type="text">
-    </div>
-    <button type="submit">Commit</button>
-  </form>
+  <tweet-form-pane :tweet='tweet' @submit="createTweet"></tweet-form-pane>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+
+import TweetFormPane from 'TweetFormPane.vue';
 
 export default {
+  components: {
+    TweetFormPane
+  },
   data: function() {
     return {
       tweet: {

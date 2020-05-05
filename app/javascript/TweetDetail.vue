@@ -2,6 +2,7 @@
   <div>
     <p>ID: {{ tweet.id }}</p>
     <p>Content: {{ tweet.content }}</p>
+    <p><router-link :to="{ name: 'TweetEdit', parmas: { id: tweet.id }}">Edit</router-link></p>
   </div>
 </template>
 

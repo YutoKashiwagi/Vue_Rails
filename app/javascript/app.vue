@@ -13,6 +13,7 @@ import VueRouter from 'vue-router'
 import TweetsIndexVue from 'TweetsIndex.vue'
 import TweetDetailVue from './TweetDetail.vue'
 import TweetNewVue from './TweetNew.vue'
+import TweetEditVue from './TweetEdit.vue'
 
 const router = new VueRouter({
   routes: [
@@ -29,6 +30,11 @@ const router = new VueRouter({
       path: '/tweets/new',
       name: 'TweetNew',
       component: TweetNewVue
+    },
+    {
+      path: '/tweets/:id(\\d+)/edit',
+      name: 'TweetEdit',
+      component: TweetEditVue
     }
   ]
 })
