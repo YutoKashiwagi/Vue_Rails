@@ -2,6 +2,8 @@
   <div>
     <p>ID: {{ tweet.id }}</p>
     <p>Content: {{ tweet.content }}</p>
+    <p><router-link :to="{ name: 'TweetEdit', parmas: { id: tweet.id }}">Edit</router-link></p>
+    <button v-on:click="deleteTweet">Delete</button>
   </div>
 </template>
 
@@ -18,6 +20,15 @@ export default {
     axios
       .get(`/api/v1/tweets/${this.$route.params.id}.json`)
       .then(response => (this.tweet = response.data))
+  },
+  methods: {
+    deleteTweet: function() {
+      axios
+        .delete(`/api/v1/tweets/${this.tweet.id}.json`, this.tweet)
+        .then(response => {
+          this.$router.push({ name: 'TweetIndex' })
+        })
+    }
   }
 }
 </script>
